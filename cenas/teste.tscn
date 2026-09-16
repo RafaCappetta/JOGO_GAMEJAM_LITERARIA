@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d4bt8142kwxc0"]
+
+[ext_resource type="PackedScene" uid="uid://01qumsfut4v6" path="res://cenas/player.tscn" id="1_t87xa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8or6t"]
+albedo_color = Color(0.36495528, 0, 0.010915428, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_un3lp"]
+sky_top_color = Color(0.15096161, 0.47880834, 0.5825629, 1)
+sky_horizon_color = Color(0.60764045, 0.9093994, 0.792877, 1)
+ground_bottom_color = Color(0.005754871, 0.0006076645, 7.6944336e-05, 1)
+ground_horizon_color = Color(0.59607846, 0.8901961, 0.78431374, 1)
+
+[sub_resource type="Sky" id="Sky_lbg61"]
+sky_material = SubResource("ProceduralSkyMaterial_un3lp")
+
+[sub_resource type="Environment" id="Environment_t87xa"]
+background_mode = 2
+sky = SubResource("Sky_lbg61")
+ssr_enabled = true
+ssao_enabled = true
+
+[node name="Teste" type="Node3D" unique_id=1607967411]
+
+[node name="Chao" type="CSGBox3D" parent="." unique_id=656949078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33696222, 0)
+use_collision = true
+size = Vector3(15, 1, 15)
+material = SubResource("StandardMaterial3D_8or6t")
+
+[node name="Player" parent="." unique_id=900816045 instance=ExtResource("1_t87xa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1896209317]
+transform = Transform3D(1, 0, 0, 0, 0.8835507, 0.4683355, 0, -0.4683355, 0.8835507, 0, 7.175654, 12.954971)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1684721136]
+environment = SubResource("Environment_t87xa")
