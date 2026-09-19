@@ -20,3 +20,10 @@ mesh = SubResource("BoxMesh_yf5fn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1080324060]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=106709806]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47922724, 0)
+visible = false
+billboard = 1
+text = "Aperte E para pegar"
