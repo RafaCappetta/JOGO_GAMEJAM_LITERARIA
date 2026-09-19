@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cqg3dhi80tati"]
+
+[ext_resource type="Script" uid="uid://bljdoh2xec405" path="res://cenas/item.gd" id="1_3byuw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57qmd"]
+albedo_color = Color(0.8965956, 0.8741145, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="Item" type="StaticBody3D" unique_id=1077659374 groups=["Item"]]
+script = ExtResource("1_3byuw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=396519839]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_57qmd")
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1080324060]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_g4v7s")

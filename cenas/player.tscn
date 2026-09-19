@@ -6,7 +6,13 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
-[node name="Player" type="CharacterBody3D" unique_id=900816045]
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.3413696, 2.4580078)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(1, 1.3363037, 0.030273438)
+
+[node name="Player" type="CharacterBody3D" unique_id=900816045 groups=["Player"]]
 script = ExtResource("1_8or6t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1186083380]
@@ -19,3 +25,18 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 
 [node name="Camera3D" type="Camera3D" parent="Cabeça" unique_id=1578796452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7406565, -0.28851223)
+
+[node name="Area3D" type="Area3D" parent="Cabeça/Camera3D" unique_id=950471910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7406565, 0.28851223)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cabeça/Camera3D/Area3D" unique_id=97893195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7016758, -1.6552263)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cabeça/Camera3D/Area3D/CollisionShape3D" unique_id=903079505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.028279662, -1.2394947)
+visible = false
+mesh = SubResource("BoxMesh_g4v7s")
+
+[connection signal="body_entered" from="Cabeça/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Cabeça/Camera3D/Area3D" to="." method="_on_area_3d_body_exited"]

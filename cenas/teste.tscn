@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d4bt8142kwxc0"]
 
+[ext_resource type="PackedScene" uid="uid://cqg3dhi80tati" path="res://cenas/item.tscn" id="1_lbg61"]
 [ext_resource type="PackedScene" uid="uid://01qumsfut4v6" path="res://cenas/player.tscn" id="1_t87xa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8or6t"]
@@ -27,6 +28,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33696222, 0)
 use_collision = true
 size = Vector3(15, 1, 15)
 material = SubResource("StandardMaterial3D_8or6t")
+
+[node name="Item" parent="." unique_id=1453302663 instance=ExtResource("1_lbg61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5796938, 0.74752283, 0)
 
 [node name="Player" parent="." unique_id=900816045 instance=ExtResource("1_t87xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
