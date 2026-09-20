@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bs7gnxq8d3ng7"]
+
+[ext_resource type="Shader" uid="uid://bdcea15f6w2k0" path="res://shaders/psx.gdshader" id="1_kaa5i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("1_kaa5i")
+shader_parameter/pixel_resolution = 512.0
+shader_parameter/color_steps = 100
+shader_parameter/noise_strength = 0.1
+shader_parameter/enable_dither = true
+shader_parameter/dither_strength = 0.2000000095
+shader_parameter/enable_glow = false
+shader_parameter/glow_strength = 0.2000000095
+shader_parameter/glow_spread = 0.005
+shader_parameter/enable_vintage = false
+shader_parameter/vintage_strength = 0.400000019
+
+[node name="Tela" type="Control" unique_id=296651799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1129853983]
+material = SubResource("ShaderMaterial_g4v7s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
