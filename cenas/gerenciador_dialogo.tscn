@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c0u8jgaku6u0v"]
+
+[ext_resource type="Script" uid="uid://b0ufhkur7eic4" path="res://scripts/gerenciador_dialogo.gd" id="1_ki37i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wp5od"]
+font_size = 32
+
+[node name="Gerenciador_dialogo" type="CanvasLayer" unique_id=218007053]
+process_mode = 3
+script = ExtResource("1_ki37i")
+
+[node name="Caixa_dialogo" type="Control" parent="." unique_id=449894306]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Caixa_dialogo" unique_id=59880925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Texto" type="Label" parent="Caixa_dialogo" unique_id=374517157]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Testando"
+label_settings = SubResource("LabelSettings_wp5od")
+autowrap_mode = 3
