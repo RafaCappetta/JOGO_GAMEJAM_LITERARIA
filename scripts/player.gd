@@ -65,3 +65,6 @@ func checar_colisao_raycast():
 		item = colisao
 		if item != null:
 			item.mostrar_label()
+			
+func diminuir_sanidade():
+	%Sanidade.value -= 10;

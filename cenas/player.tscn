@@ -6,6 +6,20 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.1058419, 0.33570817, 0.47542298, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Player" type="CharacterBody3D" unique_id=900816045 groups=["Player"]]
 script = ExtResource("1_8or6t")
 
@@ -31,3 +45,31 @@ light_energy = 1.5
 light_volumetric_fog_energy = 0.1
 spot_range = 15.0
 spot_angle_attenuation = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1469806216]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Sanidade" type="ProgressBar" parent="CanvasLayer" unique_id=593966870]
+unique_name_in_owner = true
+offset_left = 824.0
+offset_top = 32.0
+offset_right = 1224.0
+offset_bottom = 72.0
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_g4v7s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yf5fn")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Sanidade" unique_id=1886699290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "👁️👁"
+horizontal_alignment = 1
+vertical_alignment = 1

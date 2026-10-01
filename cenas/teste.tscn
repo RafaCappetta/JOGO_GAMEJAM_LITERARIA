@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://d4bt8142kwxc0"]
 
+[ext_resource type="Script" uid="uid://cs0s3loej40on" path="res://scripts/teste.gd" id="1_627p2"]
 [ext_resource type="PackedScene" uid="uid://cqg3dhi80tati" path="res://cenas/item.tscn" id="1_lbg61"]
 [ext_resource type="PackedScene" uid="uid://01qumsfut4v6" path="res://cenas/player.tscn" id="1_t87xa"]
 [ext_resource type="PackedScene" uid="uid://bs7gnxq8d3ng7" path="res://cenas/tela.tscn" id="1_un3lp"]
 [ext_resource type="PackedScene" uid="uid://bsgvx52fcodut" path="res://cenas/carta.tscn" id="3_k1tiw"]
 [ext_resource type="PackedScene" uid="uid://c0u8jgaku6u0v" path="res://cenas/gerenciador_dialogo.tscn" id="5_627p2"]
+[ext_resource type="PackedScene" uid="uid://b7attur46byht" path="res://cenas/pause.tscn" id="3_k1tiw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8or6t"]
 albedo_color = Color(0.36495528, 0, 0.010915428, 1)
@@ -35,8 +37,7 @@ adjustment_enabled = true
 adjustment_brightness = 1.5
 
 [node name="Teste" type="Node3D" unique_id=1607967411]
-
-[node name="Tela" parent="." unique_id=296651799 instance=ExtResource("1_un3lp")]
+script = ExtResource("1_627p2")
 
 [node name="Chao" type="CSGBox3D" parent="." unique_id=656949078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33696222, 0)
@@ -61,9 +62,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1896209317]
 transform = Transform3D(1, 0, 0, 0, 0.8835507, 0.4683355, 0, -0.4683355, 0.8835507, 0, 7.175654, 12.954971)
-visible = false
+light_color = Color(0.25219816, 0.22195002, 0.22474301, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1684721136]
 environment = SubResource("Environment_t87xa")
 
 [node name="Gerenciador_dialogo" parent="." unique_id=218007053 instance=ExtResource("5_627p2")]
+[node name="Pause" parent="." unique_id=2017682240 instance=ExtResource("3_k1tiw")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Tela" parent="." unique_id=296651799 instance=ExtResource("1_un3lp")]
