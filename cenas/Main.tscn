@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://jy056g06lm2w"]
 
+[ext_resource type="Script" uid="uid://c2c4jneey2pg0" path="res://scripts/main.gd" id="1_2u23g"]
 [ext_resource type="PackedScene" uid="uid://cqg3dhi80tati" path="res://cenas/item.tscn" id="1_mxc5g"]
 [ext_resource type="PackedScene" uid="uid://bsgvx52fcodut" path="res://cenas/carta.tscn" id="2_2u23g"]
 [ext_resource type="PackedScene" uid="uid://01qumsfut4v6" path="res://cenas/player.tscn" id="3_ro4vj"]
@@ -34,6 +35,7 @@ adjustment_enabled = true
 adjustment_brightness = 1.5
 
 [node name="Main" type="Node3D" unique_id=50943912]
+script = ExtResource("1_2u23g")
 
 [node name="Chao" type="CSGBox3D" parent="." unique_id=1742466191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33696222, 0)
