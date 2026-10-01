@@ -16,7 +16,7 @@ func _ready():
 	
 func _process(delta: float) -> void:
 	checar_colisao_raycast()
-	pegar_item()
+	interagir_objetos()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -46,9 +46,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 		
-func pegar_item():
+func interagir_objetos():
 	if item != null and Input.is_action_just_pressed("pegar"):
-		item.foi_pego()
+		item.interagir()
 		item = null
 		print("Pegou")
 		

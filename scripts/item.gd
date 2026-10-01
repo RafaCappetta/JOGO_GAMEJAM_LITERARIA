@@ -16,3 +16,6 @@ func ocultar_label():
 
 func foi_pego():
 	queue_free()
+
+func interagir() -> void:
+	foi_pego()

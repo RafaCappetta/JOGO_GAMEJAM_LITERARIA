@@ -9,8 +9,6 @@ var dialogo_ativo: bool = false
 
 func _ready() -> void:
 	caixa_dialogo.visible = false
-	inicio_dialogo(["Pausando para testar dialogo...", 
-					"Despausando..."])
 
 func inicio_dialogo(linhas: Array[String]):
 	#pausar jogo ao abrir dialogo

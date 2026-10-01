@@ -5,7 +5,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_wp5od"]
 font_size = 32
 
-[node name="Gerenciador_dialogo" type="CanvasLayer" unique_id=218007053]
+[node name="Gerenciador_dialogo" type="CanvasLayer" unique_id=218007053 groups=["SistemaDialogo"]]
 process_mode = 3
 script = ExtResource("1_ki37i")
 

@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cqg3dhi80tati" path="res://cenas/item.tscn" id="1_lbg61"]
 [ext_resource type="PackedScene" uid="uid://01qumsfut4v6" path="res://cenas/player.tscn" id="1_t87xa"]
 [ext_resource type="PackedScene" uid="uid://bs7gnxq8d3ng7" path="res://cenas/tela.tscn" id="1_un3lp"]
+[ext_resource type="PackedScene" uid="uid://bsgvx52fcodut" path="res://cenas/carta.tscn" id="3_k1tiw"]
+[ext_resource type="PackedScene" uid="uid://c0u8jgaku6u0v" path="res://cenas/gerenciador_dialogo.tscn" id="5_627p2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8or6t"]
 albedo_color = Color(0.36495528, 0, 0.010915428, 1)
@@ -51,6 +53,9 @@ material = SubResource("StandardMaterial3D_g4v7s")
 [node name="Item" parent="." unique_id=1453302663 instance=ExtResource("1_lbg61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5796938, 0.74752283, 0)
 
+[node name="Carta" parent="." unique_id=395946179 instance=ExtResource("3_k1tiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.598144, 0.71244186, 2.850192)
+
 [node name="Player" parent="." unique_id=900816045 instance=ExtResource("1_t87xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
@@ -60,3 +65,5 @@ visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1684721136]
 environment = SubResource("Environment_t87xa")
+
+[node name="Gerenciador_dialogo" parent="." unique_id=218007053 instance=ExtResource("5_627p2")]
