@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bbomfniedergp"]
 
-[ext_resource type="Script" uid="uid://bmj1fqs13jc2y" path="res://scripts/menu.gd" id="1_64url"]
-[ext_resource type="PackedScene" uid="uid://bs7gnxq8d3ng7" path="res://cenas/tela.tscn" id="2_nbnbt"]
+[ext_resource type="Script" uid="uid://bmj1fqs13jc2y" path="res://scripts/menu_pause.gd" id="1_xax3q"]
+[ext_resource type="PackedScene" uid="uid://bs7gnxq8d3ng7" path="res://cenas/tela.tscn" id="2_ecnfh"]
 
-[node name="Menu" type="Control" unique_id=709263069]
+[node name="Menu_pause" type="Control" unique_id=709263069]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_64url")
+script = ExtResource("1_xax3q")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=478296128]
 layout_mode = 1
@@ -50,7 +50,7 @@ theme_override_colors/font_hover_color = Color(0.8627451, 0.40784314, 0.52156866
 theme_override_font_sizes/font_size = 50
 text = "Sair"
 
-[node name="Tela" parent="." unique_id=296651799 instance=ExtResource("2_nbnbt")]
+[node name="Tela" parent="." unique_id=296651799 instance=ExtResource("2_ecnfh")]
 layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
