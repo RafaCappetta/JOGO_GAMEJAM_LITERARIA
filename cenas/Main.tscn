@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c0u8jgaku6u0v" path="res://cenas/gerenciador_dialogo.tscn" id="5_5cxbu"]
 [ext_resource type="PackedScene" uid="uid://bs7gnxq8d3ng7" path="res://cenas/tela.tscn" id="6_bujqr"]
 [ext_resource type="PackedScene" uid="uid://bhj2bx8k2s537" path="res://cenas/Builds/Trenzinhoperfeito.glb" id="7_3fpx0"]
+[ext_resource type="VideoStream" uid="uid://cpqub5brl58bo" path="res://cenas/Loop-Tela-fundo.ogv" id="8_b2wyu"]
+[ext_resource type="Script" uid="uid://6xvtd5w6wx3i" path="res://cenas/mesh_instance_3d_2.gd" id="9_b2wyu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adoo1"]
 albedo_color = Color(0.36495528, 0, 0.010915428, 1)
@@ -34,13 +36,26 @@ volumetric_fog_emission_energy = 0.1
 adjustment_enabled = true
 adjustment_brightness = 1.5
 
+[sub_resource type="QuadMesh" id="QuadMesh_gqrcs"]
+resource_local_to_scene = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_43lej"]
+viewport_path = NodePath("MeshInstance3D2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve4po"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_43lej")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u23g"]
+albedo_color = Color(0.17464656, 0.55233204, 0.7952093, 1)
+
 [node name="Main" type="Node3D" unique_id=50943912]
 script = ExtResource("1_2u23g")
 
 [node name="Chao" type="CSGBox3D" parent="." unique_id=1742466191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33696222, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33761024, -0.11503792, 0.26822472)
 use_collision = true
-size = Vector3(33, 1, 33)
+size = Vector3(24.337677, 0.55615234, 12.452972)
 material = SubResource("StandardMaterial3D_adoo1")
 
 [node name="Item" parent="." unique_id=1077659374 instance=ExtResource("1_mxc5g")]
@@ -53,8 +68,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.961362, 0.9733883, 1.685151
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1486963469]
-transform = Transform3D(0.9982227, 0.027909838, -0.05265404, 0, 0.8835507, 0.4683355, 0.05959368, -0.46750313, 0.88198036, 0, 7.175654, 12.954971)
-light_color = Color(0.25219816, 0.22195002, 0.22474301, 1)
+transform = Transform3D(0.9982227, 0.027909836, -0.052654043, 0, 0.8835507, 0.46833548, 0.05959368, -0.46750313, 0.8819804, -2.245016, 7.175654, 7.4365025)
+light_color = Color(0.67374384, 0.63062626, 0.63051915, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1498090371]
 environment = SubResource("Environment_veetu")
@@ -65,7 +80,44 @@ visible = false
 
 [node name="Gerenciador_dialogo" parent="." unique_id=218007053 instance=ExtResource("5_5cxbu")]
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=608794426]
+transform = Transform3D(24.37125, 0, 0, 0, 5.8049903, 0, 0, 0, 3.5795555, -0.44930983, 2.8622112, -5.6241097)
+mesh = SubResource("QuadMesh_gqrcs")
+surface_material_override/0 = SubResource("StandardMaterial3D_ve4po")
+script = ExtResource("9_b2wyu")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MeshInstance3D2" unique_id=2024079258]
+anchors_preset = -1
+anchor_top = -1.0150001
+anchor_right = 0.99600005
+offset_top = 0.20007324
+offset_right = 9.679932
+offset_bottom = -4.0
+stream = ExtResource("8_b2wyu")
+autoplay = true
+expand = true
+loop = true
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D2" unique_id=403538862]
+size = Vector2i(1920, 1080)
+
 [node name="Tela" parent="." unique_id=296651799 instance=ExtResource("6_bujqr")]
 
 [node name="Trenzinhoperfeito" parent="." unique_id=617144663 instance=ExtResource("7_3fpx0")]
 transform = Transform3D(1, 0, 0, 0, 1.5492457, 0, 0, 0, 1.5516357, -0.036564827, 0.23774469, -0.08889866)
+
+[node name="Parede3" type="CSGBox3D" parent="." unique_id=1438924970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.604027, 2.4383469, 0.29138947)
+use_collision = true
+size = Vector3(0.13640594, 4.76033, 12.262207)
+material = SubResource("StandardMaterial3D_2u23g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1027250143]
+transform = Transform3D(-24.37125, 0, -3.129347e-07, 0, 5.804991, 0, 2.1306023e-06, 0, -3.5795557, -0.44930983, 2.8622112, 6.083825)
+mesh = SubResource("QuadMesh_gqrcs")
+
+[node name="Parede4" type="CSGBox3D" parent="." unique_id=1388553346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.744091, 2.4383469, 0.29138947)
+use_collision = true
+size = Vector3(0.13640594, 4.76033, 12.262207)
+material = SubResource("StandardMaterial3D_2u23g")
