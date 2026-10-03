@@ -6,9 +6,9 @@ var olhar_sanidade = false
 func _ready() -> void:
 	pass # Replace with function body.
 
-@export var texto_carta: Array[String] = ["então mano essa carta aqui", 
-										"é pra falar da tua muie que foi de F", 
-										"D:", "é isso."]
+@export var texto_carta: Array[String] = ["Você encontra um laudo de autopsia no chão.",
+											"'Nome: ????????????", "Causa Mortis: Asfixia mecânica, produzida por ação de laço/constrição cervical.",
+											"Achados: Lesões internas no pescoço.'"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
