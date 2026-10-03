@@ -11,11 +11,16 @@ var item : Node3D = null
 
 @onready var visao = $"Cabeça/Camera3D/RayCast3D"
 
+var timer_fim = true
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _process(delta: float) -> void:
 	checar_colisao_raycast()
+	if item != null and item.olhar_sanidade == true and timer_fim == true:
+		%Timer.start()
+		timer_fim = false
 	interagir_objetos()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -66,5 +71,7 @@ func checar_colisao_raycast():
 		if item != null:
 			item.mostrar_label()
 			
-func diminuir_sanidade():
-	%Sanidade.value -= 10;
+
+func _on_timer_timeout() -> void:
+	%Sanidade.value -= 10
+	timer_fim = true

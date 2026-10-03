@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+@export var olhar_sanidade = true
+
 func _ready() -> void:
 	pass
 

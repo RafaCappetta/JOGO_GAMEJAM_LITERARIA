@@ -73,3 +73,9 @@ theme_override_font_sizes/font_size = 25
 text = "👁️👁"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=263947313]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
