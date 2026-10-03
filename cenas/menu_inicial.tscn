@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bh4g11sit2j21"]
 
 [ext_resource type="PackedScene" uid="uid://bs7gnxq8d3ng7" path="res://cenas/tela.tscn" id="1_5y2fb"]
+[ext_resource type="Script" uid="uid://b1f77lms0vihp" path="res://scripts/menu_inicial.gd" id="1_omb8n"]
 
 [node name="Menu_inicial" type="Control" unique_id=216324567]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_omb8n")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1064636008]
 layout_mode = 1
@@ -37,31 +39,39 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.19607843, 0.3019608, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.40784314, 0.52156866, 1)
+theme_override_font_sizes/font_size = 50
 text = "Iniciar"
 
 [node name="Opcoes" type="Button" parent="VBoxContainer" unique_id=1330492429]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.19607843, 0.3019608, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.40784314, 0.52156866, 1)
+theme_override_font_sizes/font_size = 50
 text = "Opções"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=983909116]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.19607843, 0.3019608, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.40784314, 0.52156866, 1)
+theme_override_font_sizes/font_size = 50
 text = "Tutorial"
 
 [node name="Creditos" type="Button" parent="VBoxContainer" unique_id=1063876664]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.19607843, 0.3019608, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.40784314, 0.52156866, 1)
+theme_override_font_sizes/font_size = 50
 text = "Creditos"
 
 [node name="Sair" type="Button" parent="VBoxContainer" unique_id=958624696]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57254905, 0.19607843, 0.3019608, 1)
 theme_override_colors/font_hover_color = Color(0.8627451, 0.40784314, 0.52156866, 1)
+theme_override_font_sizes/font_size = 50
 text = "Sair"
 
 [node name="Tela" parent="." unique_id=296651799 instance=ExtResource("1_5y2fb")]
 layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]
